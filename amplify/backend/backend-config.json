@@ -1,0 +1,14 @@
+{
+	"auth": {
+		"cognitod8ee8a9c": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"analytics": {
+		"plutus": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

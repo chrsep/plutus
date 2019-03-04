@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "plutus-20190304142628-authRole",
+            "UnauthRoleArn": "arn:aws:iam::332335290984:role/plutus-20190304142628-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::332335290984:role/plutus-20190304142628-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "plutus-20190304142628-deployment",
+            "UnauthRoleName": "plutus-20190304142628-unauthRole",
+            "StackName": "plutus-20190304142628",
+            "StackId": "arn:aws:cloudformation:us-east-1:332335290984:stack/plutus-20190304142628/d3cdc580-3e4e-11e9-9662-0e0a24f9b5c2"
+        },
+        "categories": {
+            "auth": {
+                "cognitod8ee8a9c": {}
+            }
+        }
+    }
+}

@@ -12,6 +12,7 @@ import { Provider } from "mobx-react"
 import { BackButtonHandler } from "./navigation/back-button-handler"
 import { contains } from "ramda"
 import { DEFAULT_NAVIGATION_CONFIG } from "./navigation/navigation-config"
+import "./services/reactotron"
 
 interface AppState {
   rootStore?: RootStore
