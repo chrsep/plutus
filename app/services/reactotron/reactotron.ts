@@ -1,5 +1,5 @@
 import Tron from "reactotron-react-native"
-import { RootStore } from "../../models/root-store/root-store"
+import { RootStore } from "../../models/root-store"
 import { onSnapshot } from "mobx-state-tree"
 import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from "./reactotron-config"
 import { mst } from "reactotron-mst"
@@ -23,6 +23,7 @@ if (__DEV__) {
   console.tron = Tron // attach reactotron to `console.tron`
 } else {
   // attach a mock so if things sneaky by our __DEV__ guards, we won't crash.
+  // @ts-ignore
   console.tron = {
     benchmark: noop,
     clear: noop,
@@ -74,6 +75,7 @@ export class Reactotron {
    * Hook into the root store for doing awesome state-related things.
    *
    * @param rootStore The root store
+   * @param initialData
    */
   setRootStore(rootStore: any, initialData: any) {
     if (__DEV__) {
