@@ -1,26 +1,37 @@
 import * as React from "react"
-import { observer } from "mobx-react"
-import { ViewStyle } from "react-native"
 import { Text } from "../../components/text"
 import { Screen } from "../../components/screen"
-import { color } from "../../theme"
+import { color, spacing } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
+import { styled } from "../../utils/styled-components"
+import { FunctionComponent } from "react"
 
-export interface LoginScreenProps extends NavigationScreenProps<{}> {
-}
-
-const ROOT: ViewStyle = {
-  backgroundColor: color.palette.black,
-}
+export interface LoginScreenProps extends NavigationScreenProps<{}> {}
 
 // @inject("mobxstuff")
-@observer
-export class LoginScreen extends React.Component<LoginScreenProps, {}> {
-  render () {
-    return (
-      <Screen style={ROOT} preset="fixedCenter">
-        <Text preset="header" tx="loginScreen.header" />
-      </Screen>
-    )
+export const LoginScreen: FunctionComponent<LoginScreenProps> = props => {
+  const buttonCallback = () => {
+    props.navigation.navigate("setupIntegrationScreen")
   }
+  return (
+    <Root preset="fixedCenter">
+      <LoginBg>
+        <Text preset="header" tx="loginScreen.header" />
+        <LoginButton title="test" onPress={buttonCallback} />
+      </LoginBg>
+    </Root>
+  )
 }
+
+const Root = styled(Screen)`
+  background-color: ${color.background};
+`
+const LoginBg = styled.View`
+  background-color: ${color.backgroundLight};
+  border-radius: 4px;
+  padding: ${spacing[4]}px;
+  width: 100%;
+`
+const LoginButton = styled.Button`
+  font-size: 21px;
+`

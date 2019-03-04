@@ -21,5 +21,15 @@
   "storybook": {
     "placeholder": "Placeholder",
     "field": "Field"
+  },
+  "mainScreen": {
+    "header": "this is a header"
+  },
+  "loginScreen": {
+    "header": "Login",
+    "google": "Google"
+  },
+  "authLoadingScreen": {
+    "header": "PLUTUS"
   }
 }

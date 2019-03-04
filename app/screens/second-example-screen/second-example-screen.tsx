@@ -80,8 +80,11 @@ export class SecondExampleScreen extends React.Component<SecondExampleScreenProp
   goBack = () => this.props.navigation.goBack(null)
 
   demoReactotron = async () => {
+    // @ts-ignore
     console.tron.log("Your Friendly tron log message")
+    // @ts-ignore
     console.tron.logImportant("I am important")
+    // @ts-ignore
     console.tron.display({
       name: "DISPLAY",
       value: {

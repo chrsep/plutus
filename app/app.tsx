@@ -13,6 +13,12 @@ import { BackButtonHandler } from "./navigation/back-button-handler"
 import { contains } from "ramda"
 import { DEFAULT_NAVIGATION_CONFIG } from "./navigation/navigation-config"
 import "./services/reactotron"
+import { ThemeProvider } from "./utils/styled-components"
+import * as Theme from "./theme"
+import Amplify from "aws-amplify"
+import awsmobile from "../aws-exports"
+
+Amplify.configure(awsmobile)
 
 interface AppState {
   rootStore?: RootStore
@@ -65,9 +71,11 @@ export class App extends React.Component<{}, AppState> {
 
     return (
       <Provider rootStore={rootStore} navigationStore={rootStore.navigationStore} {...otherStores}>
-        <BackButtonHandler canExit={this.canExit}>
-          <StatefulNavigator />
-        </BackButtonHandler>
+        <ThemeProvider theme={Theme}>
+          <BackButtonHandler canExit={this.canExit}>
+            <StatefulNavigator />
+          </BackButtonHandler>
+        </ThemeProvider>
       </Provider>
     )
   }
@@ -85,4 +93,3 @@ const SHOW_STORYBOOK = false
 
 const RootComponent = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : App
 AppRegistry.registerComponent(APP_NAME, () => RootComponent)
-

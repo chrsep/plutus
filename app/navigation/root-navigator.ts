@@ -1,14 +1,17 @@
 import { createStackNavigator } from "react-navigation"
-import { LoginScreen } from "../screens/login-screen"
-import { ExampleNavigator } from "./example-navigator"
+import { AuthLoadingScreen } from "../screens/auth-loading-screen"
+import { AuthNavigator } from "./auth-navigator"
+import { AppNavigator } from "./app-navigator"
 
 export const RootNavigator = createStackNavigator(
   {
-    loginScreen: { screen: LoginScreen },
-    exampleStack: { screen: ExampleNavigator },
+    authLoadingScreen: { screen: AuthLoadingScreen },
+    auth: AuthNavigator,
+    app: AppNavigator,
   },
   {
     headerMode: "none",
     navigationOptions: { gesturesEnabled: false },
+    initialRouteName: "authLoadingScreen",
   },
 )
